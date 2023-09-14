@@ -1,0 +1,23 @@
+ion-toolbar {
+    --background: #3880ff;
+}
+
+#container {
+    padding: 0 40px;
+}
+
+.pokemon_card {
+    position: relative;
+    height: 115px;
+    border-radius: 10px;
+}
+
+// linear-gradient(to bottom, #ffffff 50%, #ffffff 50%);
+
+.pokemon_img {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    right: 0;
+    bottom: 0;
+}

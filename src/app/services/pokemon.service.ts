@@ -10,7 +10,7 @@ export class PokemonService {
 
   getAll() {
     return gql`
-      query get {
+      query samplePokeAPIquery {
         pokemon: pokemon_v2_pokemon {
           id
           name
@@ -26,10 +26,41 @@ export class PokemonService {
               name
             }
           }
-          pokemon_v2_pokemonspecy {
+          especificaciones: pokemon_v2_pokemonspecy {
             capture_rate
-            pokemon_v2_growthrate {
-              name
+            pokemon_v2_evolutionchain {
+              id
+              pokemon_v2_pokemonspecies {
+                name
+                pokemon_v2_pokemonevolutions {
+                  pokemon_v2_move {
+                    name
+                  }
+                  time_of_day
+                  turn_upside_down
+                  min_affection
+                  min_beauty
+                  min_happiness
+                  min_level
+                  needs_overworld_rain
+                  held_item_id
+                  pokemonV2ItemByHeldItemId {
+                    id
+                    name
+                  }
+                  pokemon_v2_item {
+                    name
+                    id
+                  }
+                  evolution_trigger_id
+                  pokemon_v2_evolutiontrigger {
+                    name
+                  }
+                }
+              }
+            }
+            generacion: pokemon_v2_generation {
+              id
             }
           }
         }

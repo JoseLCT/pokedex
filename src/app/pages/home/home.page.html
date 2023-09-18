@@ -1,88 +1,89 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="end">
-      <ion-button id="open_modal_generation_filter">
-        <ion-icon slot="icon-only" name="apps"></ion-icon>
-      </ion-button>
-      <ion-button id="open_modal_sort_filter">
-        <ion-icon slot="icon-only" name="funnel"></ion-icon>
-      </ion-button>
-      <ion-button id="open_modal_general_filter">
-        <ion-icon slot="icon-only" name="options"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Pokédex</ion-title>
-    <p>Search for Pokémon by name or using the National Pokédex number.</p>
+    <ion-buttons [collapse]="true" slot="end">
+      <ion-button id="open_modal_generation_filter" class="filter_button" size="large">
+        <ion-icon src="assets/home/filter-generation.svg" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button id="open_modal_sort_filter" class="filter_button">
+        <ion-icon src="assets/home/filter-sort.svg" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button id="open_modal_general_filter" class="filter_button">
+        <ion-icon src="assets/home/filter-general.svg" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <h1 class="title">Pokédex</h1>
+      <p class="description">Search for Pokémon by name or using the National Pokédex number.</p>
+    </ion-toolbar>
     <ion-toolbar>
       <ion-searchbar placeholder="What Pokémon are you looking for?"></ion-searchbar>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <ion-list>
-      <ion-card *ngFor="let pokemon of pokemonList" class="pokemon_card">
-        <ion-card-header>
-          <ion-card-title>{{ pokemon.name }}</ion-card-title>
-          <ion-card-subtitle>{{ pokemon.id }}</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          <img
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ pokemon.id }}.png"
-            alt="{{ pokemon.name }}" class="pokemon_img">
-        </ion-card-content>
-      </ion-card>
-    </ion-list>
+    <div *ngFor="let pokemon of pokemonList" class="pokemon_card {{pokemon.tipos[0].detalleTipo.name}}">
+      <div class="pokemon_information">
+        <p class="pokemon_id">#{{ pokemon.id }}</p>
+        <h3 class="pokemon_name">{{ pokemon.name }}</h3>
+        <div class="pokemon_types">
+          <div *ngFor="let type of pokemon.tipos" class="pokemon_type {{ type.detalleTipo.name }}">
+            <img src="assets/types/{{ type.detalleTipo.name }}.svg" alt="{{ type.detalleTipo.name }}" class="type_icon">
+            <p class="type_name">{{ type.detalleTipo.name }}</p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ pokemon.id }}.png"
+        alt="{{ pokemon.name }}" class="pokemon_img">
+    </div>
   </div>
 
-  <ion-modal #modalGenerationFilter trigger="open_modal_generation_filter" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+  <ion-modal #modalGenerationFilter trigger="open_modal_generation_filter" [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.5, 0.9]">
     <ng-template>
-      <ion-content>
-        <ion-searchbar placeholder="Search" (click)="modalGenerationFilter.setCurrentBreakpoint(0.75)"></ion-searchbar>
-        <ion-list>
-          <ion-item>
-            <ion-avatar slot="start">
-              <ion-img src="https://i.pravatar.cc/300?u=b"></ion-img>
-            </ion-avatar>
-            <ion-label>
-              <h2>Connor Smith</h2>
-              <p>Sales Rep</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-avatar slot="start">
-              <ion-img src="https://i.pravatar.cc/300?u=a"></ion-img>
-            </ion-avatar>
-            <ion-label>
-              <h2>Daniel Smith</h2>
-              <p>Product Designer</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-avatar slot="start">
-              <ion-img src="https://i.pravatar.cc/300?u=d"></ion-img>
-            </ion-avatar>
-            <ion-label>
-              <h2>Greg Smith</h2>
-              <p>Director of Operations</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-avatar slot="start">
-              <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
-            </ion-avatar>
-            <ion-label>
-              <h2>Zoey Smith</h2>
-              <p>CEO</p>
-            </ion-label>
-          </ion-item>
-        </ion-list>
+      <ion-content class="modal_container generations">
+        <h2 class="modal_title">Generations</h2>
+        <p class="modal_description">Use search for generations to explore your Pokémon!</p>
+        <div class="generations_container">
+          <button class="btn_generation first">
+            <img src="assets/home/generations/1.svg" alt="Generation 1">
+            <p>Generation I</p>
+          </button>
+          <button class="btn_generation">
+            <img src="assets/home/generations/2.svg" alt="Generation 2">
+            <p>Generation II</p>
+          </button>
+          <button class="btn_generation">
+            <img src="assets/home/generations/3.svg" alt="Generation 3">
+            <p>Generation III</p>
+          </button>
+          <button class="btn_generation">
+            <img src="assets/home/generations/4.svg" alt="Generation 4">
+            <p>Generation IV</p>
+          </button>
+          <button class="btn_generation">
+            <img src="assets/home/generations/5.svg" alt="Generation 5">
+            <p>Generation V</p>
+          </button>
+          <button class="btn_generation">
+            <img src="assets/home/generations/6.svg" alt="Generation 6">
+            <p>Generation VI</p>
+          </button>
+          <button class="btn_generation">
+            <img src="assets/home/generations/7.svg" alt="Generation 7">
+            <p>Generation VII</p>
+          </button>
+          <button class="btn_generation">
+            <img src="assets/home/generations/8.svg" alt="Generation 8">
+            <p>Generation VIII</p>
+          </button>
+        </div>
       </ion-content>
     </ng-template>
   </ion-modal>

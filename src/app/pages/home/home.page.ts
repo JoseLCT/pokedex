@@ -11,18 +11,17 @@ export class HomePage implements OnInit {
 
   pokemonList: any[] = [];
 
+  iconGenerationFilter: string = '/src/app/assets/home/filter_generation.svg';
+
   constructor(
     private apollo: Apollo,
     private pokemonService: PokemonService
-  ) {
-    this.ionViewDidEnter();
-  }
+  ) { }
 
   ngOnInit() {
   }
 
   ionViewDidEnter() {
-    // pokemos service is a graphql service
     this.apollo.watchQuery({
       query: this.pokemonService.getAll()
     }).valueChanges.subscribe((result: any) => {

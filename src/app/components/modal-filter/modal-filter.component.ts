@@ -10,6 +10,8 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class ModalFilterComponent implements OnInit {
 
+  // TODO: Falta hacer la funcionalidad del reset y el apply, se debe verificar los filtros OR (Sort)
+
   isApplied: boolean = false;
   generationList: any[] = [
     { integer: 1, roman: 'I' },

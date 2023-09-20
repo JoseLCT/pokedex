@@ -16,7 +16,7 @@
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
-@import '@ionic/angular/css/display.css';
+@import "@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "@ionic/angular/css/padding.css";
@@ -25,74 +25,195 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+@import "/src/theme/_colors.scss";
+
+.pokemon_types {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 5px;
+    gap: 5px;
+}
+
+.pokemon_types .type {
+    display: inline-flex;
+    padding: 5px;
+    align-items: center;
+    gap: 5px;
+    border-radius: 3px;
+    height: 25px;
+}
+
+.pokemon_types .type .type_icon {
+    width: 15px;
+    height: 15px;
+}
+
+.pokemon_types .type .type_name {
+    text-align: center;
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.pokemon_card.bug {
+    background-color: $bg-type-bug;
+}
+
+.pokemon_card.dark {
+    background-color: $bg-type-dark;
+}
+
+.pokemon_card.dragon {
+    background-color: $bg-type-dragon;
+}
+
+.pokemon_card.electric {
+    background-color: $bg-type-electric;
+}
+
+.pokemon_card.fairy {
+    background-color: $bg-type-fairy;
+}
+
+.pokemon_card.fighting {
+    background-color: $bg-type-fighting;
+}
+
+.pokemon_card.fire {
+    background-color: $bg-type-fire;
+}
+
+.pokemon_card.flying {
+    background-color: $bg-type-flying;
+}
+
+.pokemon_card.ghost {
+    background-color: $bg-type-ghost;
+}
+
+.pokemon_card.grass,
+.header_detail.grass {
+    background-color: $bg-type-grass;
+    --background: $bg-type-grass;
+}
+
+.pokemon_card.ground {
+    background-color: $bg-type-ground;
+}
+
+.pokemon_card.ice {
+    background-color: $bg-type-ice;
+}
+
+.pokemon_card.normal {
+    background-color: $bg-type-normal;
+}
+
+.pokemon_card.poison {
+    background-color: $bg-type-poison;
+}
+
+.pokemon_card.psychic {
+    background-color: $bg-type-psychic;
+}
+
+.pokemon_card.rock {
+    background-color: $bg-type-rock;
+}
+
+.pokemon_card.steel {
+    background-color: $bg-type-steel;
+}
+
+.pokemon_card.water {
+    background-color: $bg-type-water;
+}
+
 .type.bug {
-    background-color: #8cb230;
+    background-color: $color-type-bug;
 }
 
 .type.dark {
-    background-color: #58575f;
+    background-color: $color-type-dark;
 }
 
 .type.dragon {
-    background-color: #0f6ac0;
+    background-color: $color-type-dragon;
 }
 
 .type.electric {
-    background-color: #eed535;
+    background-color: $color-type-electric;
 }
 
 .type.fairy {
-    background-color: #ed6ec7;
+    background-color: $color-type-fairy;
 }
 
 .type.fighting {
-    background-color: #d04164;
+    background-color: $color-type-fighting;
 }
 
 .type.fire {
-    background-color: #fd7d24;
+    background-color: $color-type-fire;
 }
 
 .type.flying {
-    background-color: #748fc9;
+    background-color: $color-type-flying;
 }
 
 .type.ghost {
-    background-color: #556aae;
+    background-color: $color-type-ghost;
 }
 
 .type.grass {
-    background-color: #62b957;
+    background-color: $color-type-grass;
 }
 
 .type.ground {
-    background-color: #dd7748;
+    background-color: $color-type-ground;
 }
 
 .type.ice {
-    background-color: #61cec0;
+    background-color: $color-type-ice;
 }
 
 .type.normal {
-    background-color: #9da0aa;
+    background-color: $color-type-normal;
 }
 
 .type.poison {
-    background-color: #a552cc;
+    background-color: $color-type-poison;
 }
 
 .type.psychic {
-    background-color: #ea5d60;
+    background-color: $color-type-psychic;
 }
 
 .type.rock {
-    background-color: #baab82;
+    background-color: $color-type-rock;
 }
 
 .type.steel {
-    background-color: #417d9a;
+    background-color: $color-type-steel;
 }
 
 .type.water {
-    background-color: #4a90da;
+    background-color: $color-type-water;
+}
+
+.title_detail {
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.title_detail.grass {
+    color: $color-type-grass;
 }

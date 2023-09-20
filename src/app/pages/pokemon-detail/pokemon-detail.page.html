@@ -1,13 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>pokemonDetail</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">pokemonDetail</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<ion-toolbar class="header_detail grass">
+  <h1 class="name_bg">BULBASAUR</h1>
+  <div class="header_container">
+    <img src="assets/bulbasaur.png" alt="Bulbasaur" class="img">
+    <div class="information_container">
+      <p class="id">#001</p>
+      <h1 class="name">Bulbasaur</h1>
+      <div class="pokemon_types">
+        <!-- <div *ngFor="let type of pokemon.tipos" class="type {{ type.detalleTipo.name }}">
+          <ion-img src="assets/types/{{ type.detalleTipo.name }}.svg" alt="{{ type.detalleTipo.name }}"
+            class="type_icon" />
+          <p class="type_name">{{ type.detalleTipo.name }}</p>
+        </div> -->
+        <div class="type grass">
+          <ion-img src="assets/types/grass.svg" alt="grass" class="type_icon" />
+          <p class="type_name">grass</p>
+        </div>
+        <div class="type poison">
+          <ion-img src="assets/types/poison.svg" alt="poison" class="type_icon" />
+          <p class="type_name">poison</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-toolbar>
+<ion-tabs>
+  <ion-tab-bar slot="top">
+    <ion-tab-button tab="about">
+      About
+    </ion-tab-button>
+    <ion-tab-button tab="stats">
+      Stats
+    </ion-tab-button>
+    <ion-tab-button tab="evolution">
+      Evolution
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

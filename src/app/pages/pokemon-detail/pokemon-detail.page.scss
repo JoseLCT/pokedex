@@ -1,0 +1,85 @@
+ion-tabs {
+    transform: translateY(265px);
+    z-index: 10;
+}
+
+ion-tab-bar,
+ion-tab-button {
+    --background: transparent;
+    border: none;
+    margin: none;
+}
+
+ion-tab-button {
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    --color-selected: #FFFFFF;
+    --color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+}
+
+ion-tab-button.tab-selected {
+    font-weight: 600;
+}
+
+.header_detail {
+    position: relative;
+    height: 350px;
+    background-image: url("/assets/backgrounds/detail-bg.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-x: 25px;
+    background-position-y: 100px;
+}
+
+.name_bg {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
+    text-transform: capitalize;
+    z-index: -1;
+    margin: 0;
+}
+
+.header_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 305px;
+    gap: 25px;
+}
+
+.header_container .img {
+    width: 125px;
+    height: 125px;
+}
+
+.header_detail .information_container {
+    display: flex;
+    flex-direction: column;
+    font-family: "SF Pro Display", sans-serif;
+}
+
+.header_detail .information_container .id {
+    color: rgba(23, 23, 27, 0.6);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header_detail .information_container .name {
+    color: #ffffff;
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}

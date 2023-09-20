@@ -67,4 +67,16 @@ export class PokemonService {
       }
     `;
   }
+
+  getTypes() {
+    return gql`
+      query samplePokeAPIquery {
+        tipos: pokemon_v2_pokemontype(distinct_on: type_id) {
+          tipo: pokemon_v2_type {
+            name
+          }
+        }
+      }    
+    `;
+  }
 }

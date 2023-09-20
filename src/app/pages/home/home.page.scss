@@ -79,7 +79,7 @@ ion-searchbar {
     gap: 5px;
 }
 
-.pokemon_card .pokemon_information .pokemon_types .pokemon_type {
+.pokemon_card .pokemon_information .pokemon_types .type {
     display: inline-flex;
     padding: 5px;
     align-items: center;
@@ -88,12 +88,12 @@ ion-searchbar {
     height: 25px;
 }
 
-.pokemon_card .pokemon_information .pokemon_types .pokemon_type .type_icon {
+.pokemon_card .pokemon_information .pokemon_types .type .type_icon {
     width: 15px;
     height: 15px;
 }
 
-.pokemon_card .pokemon_information .pokemon_types .pokemon_type .type_name {
+.pokemon_card .pokemon_information .pokemon_types .type .type_name {
     text-align: center;
     font-family: "SF Pro Display", sans-serif;
     font-size: 12px;
@@ -181,132 +181,4 @@ ion-searchbar {
 
 .pokemon_card.water {
     background-color: #58abf6;
-}
-
-.pokemon_type.bug {
-    background-color: #8cb230;
-}
-
-.pokemon_type.dark {
-    background-color: #58575f;
-}
-
-.pokemon_type.dragon {
-    background-color: #0f6ac0;
-}
-
-.pokemon_type.electric {
-    background-color: #eed535;
-}
-
-.pokemon_type.fairy {
-    background-color: #ed6ec7;
-}
-
-.pokemon_type.fighting {
-    background-color: #d04164;
-}
-
-.pokemon_type.fire {
-    background-color: #fd7d24;
-}
-
-.pokemon_type.flying {
-    background-color: #748fc9;
-}
-
-.pokemon_type.ghost {
-    background-color: #556aae;
-}
-
-.pokemon_type.grass {
-    background-color: #62b957;
-}
-
-.pokemon_type.ground {
-    background-color: #dd7748;
-}
-
-.pokemon_type.ice {
-    background-color: #61cec0;
-}
-
-.pokemon_type.normal {
-    background-color: #9da0aa;
-}
-
-.pokemon_type.poison {
-    background-color: #a552cc;
-}
-
-.pokemon_type.psychic {
-    background-color: #ea5d60;
-}
-
-.pokemon_type.rock {
-    background-color: #baab82;
-}
-
-.pokemon_type.steel {
-    background-color: #417d9a;
-}
-
-.pokemon_type.water {
-    background-color: #4a90da;
-}
-
-// Modal Styles
-ion-modal {
-    --backdrop-opacity: 0.5;
-    --backdrop-background-color: rgb(23, 23, 27);
-    backdrop-filter: blur(4px);
-}
-
-.modal_container {
-    --padding-top: 30px;
-    --padding-bottom: 50px;
-    --padding-start: 40px;
-    --padding-end: 40px;
-}
-
-.modal_container .modal_title {
-    color: #17171b;
-    font-family: "SF Pro Display", sans-serif;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 700;
-    margin: 0;
-}
-
-.modal_container .modal_description {
-    color: #747476;
-    font-family: "SF Pro Display", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 5px 0 35px;
-}
-
-.modal_container.generations .generations_container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-}
-
-.modal_container.generations .generations_container .btn_generation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    height: 129px;
-    border-radius: 10px;
-    background: #f2f2f2;
-    color: #747476;
-    text-align: center;
-    font-family: "SF Pro Display", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
 }

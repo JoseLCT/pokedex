@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Apollo } from 'apollo-angular';
+import { ModalFilterComponent } from 'src/app/components/modal-filter/modal-filter.component';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -10,8 +11,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class HomePage implements OnInit {
 
   pokemonList: any[] = [];
-
-  iconGenerationFilter: string = '/src/app/assets/home/filter_generation.svg';
+  @ViewChild(ModalFilterComponent) modalFilter?: ModalFilterComponent;
 
   constructor(
     private apollo: Apollo,
@@ -26,7 +26,10 @@ export class HomePage implements OnInit {
       query: this.pokemonService.getAll()
     }).valueChanges.subscribe((result: any) => {
       this.pokemonList = result.data.pokemon;
-      console.log(this.pokemonList);
     });
+  }
+
+  openModal(type: string) {
+    this.modalFilter?.openModal(type);
   }
 }

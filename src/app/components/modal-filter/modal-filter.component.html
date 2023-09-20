@@ -1,0 +1,103 @@
+<ion-modal #modalGeneration [initialBreakpoint]="0.5" [breakpoints]="[0.5, 0.87]">
+  <ng-template>
+    <ion-content class="modal_container generation">
+      <h2 class="modal_title">Generations</h2>
+      <p class="modal_description">Use search for generations to explore your Pokémon!</p>
+      <div class="generation_container">
+        <button *ngFor="let generation of generationList" class="btn_filter generation"
+          [ngClass]="{'selected_button': selectedGenerationFilters.includes(generation.integer)}"
+          (click)="clickGeneration(generation.integer)">
+          <img src="assets/home/generations/{{generation.integer}}.svg" alt="Generation {{generation.integer}}"
+            class="img" />
+          <p class="title">Generation {{generation.roman}}</p>
+        </button>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<ion-modal #modalSort [initialBreakpoint]="0.5" [breakpoints]="[0.5, 0.57]">
+  <ng-template>
+    <ion-content class="modal_container sort">
+      <h2 class="modal_title">Sort</h2>
+      <p class="modal_description">Sort Pokémons alphabetically or by National Pokédex number!</p>
+      <div class="sort_container">
+        <button class="btn_filter sort" [ngClass]="{'selected_button': selectedSortFilters.includes('smallest-first')}"
+          (click)="clickSort('smallest-first')">
+          Smallest number first
+        </button>
+        <button class="btn_filter sort" [ngClass]="{'selected_button': selectedSortFilters.includes('highest-first')}"
+          (click)="clickSort('highest-first')">
+          Highest number first
+        </button>
+        <button class="btn_filter sort" [ngClass]="{'selected_button': selectedSortFilters.includes('a-z')}"
+          (click)="clickSort('a-z')">
+          A-Z
+        </button>
+        <button class="btn_filter sort" [ngClass]="{'selected_button': selectedSortFilters.includes('z-a')}"
+          (click)="clickSort('z-a')">
+          Z-A
+        </button>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<ion-modal #modalGeneral [initialBreakpoint]="0.5" [breakpoints]="[0.5, 0.95]">
+  <ng-template>
+    <ion-content class="modal_container general">
+      <h2 class="modal_title">Filters</h2>
+      <p class="modal_description">Use advanced search to explore Pokémon by type, weakness, height and more!</p>
+      <div class="general_container">
+        <h3  class="filter_title">Types</h3>
+        <div class="buttons_container">
+          <button *ngFor="let type of typeList" class="btn_general_filter type {{type.tipo.name}}"
+            [ngClass]="{'selected_button': selectedTypeFilters.includes(type.tipo.name)}"
+            (click)="clickType(type.tipo.name)">
+            <img src="assets/types/{{type.tipo.name}}-color.svg" class="color_img" />
+            <img src="assets/types/{{type.tipo.name}}.svg" class="white_img" />
+          </button>
+        </div>
+        <h3 class="filter_title">Weaknesses</h3>
+        <div class="buttons_container">
+          <button *ngFor="let type of typeList" class="btn_general_filter type {{type.tipo.name}}"
+            [ngClass]="{'selected_button': selectedWeaknessFilters.includes(type.tipo.name)}"
+            (click)="clickWeakness(type.tipo.name)">
+            <img src="assets/types/{{type.tipo.name}}-color.svg" class="color_img" />
+            <img src="assets/types/{{type.tipo.name}}.svg" class="white_img" />
+          </button>
+        </div>
+        <h3 class="filter_title">Heights</h3>
+        <div class="buttons_container">
+          <button *ngFor="let height of heightList" class="btn_general_filter height {{height}}"
+            [ngClass]="{'selected_button': selectedHeightFilters.includes(height)}" (click)="clickHeight(height)">
+            <img src="assets/height_weight/{{height}}-color.svg" class="color_img" />
+            <img src="assets/height_weight/{{height}}.svg" class="white_img" />
+          </button>
+        </div>
+        <h3 class="filter_title">Weights</h3>
+        <div class="buttons_container">
+          <button *ngFor="let weight of weightList" class="btn_general_filter weight {{weight}}"
+            [ngClass]="{'selected_button': selectedWeightFilters.includes(weight)}" (click)="clickWeight(weight)">
+            <img src="assets/height_weight/{{weight}}-color.svg" class="color_img" />
+            <img src="assets/height_weight/{{weight}}.svg" class="white_img" />
+          </button>
+        </div>
+        <h3 class="filter_title">Number Range</h3>
+        <div class="range_container">
+          <ion-range aria-label="Number Range" [dualKnobs]="true" [pin]="true" [min]="1" [max]="1000"
+            [value]="{ lower: 1, upper: 1000 }">
+          </ion-range>
+        </div>
+        <div class="footer">
+          <button class="btn_filter actions">
+            Reset
+          </button>
+          <button class="btn_filter actions selected_button">
+            Apply
+          </button>
+        </div>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>

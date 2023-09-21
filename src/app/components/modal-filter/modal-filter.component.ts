@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
 import { Apollo } from 'apollo-angular';
 import { PokemonService } from 'src/app/services/pokemon.service';
@@ -43,6 +43,13 @@ export class ModalFilterComponent implements OnInit {
   selectedHeightFilters: string[] = [];
   selectedWeightFilters: string[] = [];
 
+  @Output() selectedGenerationFiltersEvent: EventEmitter<number[]> = new EventEmitter<number[]>();
+  @Output() selectedSortFiltersEvent: EventEmitter<string[]> = new EventEmitter<string[]>();
+  @Output() selectedTypeFiltersEvent: EventEmitter<string[]> = new EventEmitter<string[]>();
+  @Output() selectedWeaknessFiltersEvent: EventEmitter<string[]> = new EventEmitter<string[]>();
+  @Output() selectedHeightFiltersEvent: EventEmitter<string[]> = new EventEmitter<string[]>();
+  @Output() selectedWeightFiltersEvent: EventEmitter<string[]> = new EventEmitter<string[]>();
+
   @ViewChild('modalGeneration') modalGeneration?: IonModal;
   @ViewChild('modalSort') modalSort?: IonModal;
   @ViewChild('modalGeneral') modalGeneral?: IonModal;
@@ -71,48 +78,60 @@ export class ModalFilterComponent implements OnInit {
   clickGeneration(id: number) {
     if (this.selectedGenerationFilters.includes(id)) {
       this.selectedGenerationFilters = this.selectedGenerationFilters.filter((generationId) => generationId !== id);
+      this.selectedGenerationFiltersEvent.emit(this.selectedGenerationFilters);
     } else {
       this.selectedGenerationFilters.push(id);
+      this.selectedGenerationFiltersEvent.emit(this.selectedGenerationFilters);
     }
   }
 
   clickSort(id: string) {
     if (this.selectedSortFilters.includes(id)) {
       this.selectedSortFilters = this.selectedSortFilters.filter((sortId) => sortId !== id);
+      this.selectedSortFiltersEvent.emit(this.selectedSortFilters);
     } else {
       this.selectedSortFilters.push(id);
+      this.selectedSortFiltersEvent.emit(this.selectedSortFilters);
     }
   }
 
   clickType(id: string) {
     if (this.selectedTypeFilters.includes(id)) {
       this.selectedTypeFilters = this.selectedTypeFilters.filter((type) => type !== id);
+      this.selectedTypeFiltersEvent.emit(this.selectedTypeFilters);
     } else {
       this.selectedTypeFilters.push(id);
+      this.selectedTypeFiltersEvent.emit(this.selectedTypeFilters);
     }
   }
 
   clickWeakness(id: string) {
     if (this.selectedWeaknessFilters.includes(id)) {
       this.selectedWeaknessFilters = this.selectedWeaknessFilters.filter((weakness) => weakness !== id);
+      this.selectedWeaknessFiltersEvent.emit(this.selectedWeaknessFilters);
     } else {
       this.selectedWeaknessFilters.push(id);
+      this.selectedWeaknessFiltersEvent.emit(this.selectedWeaknessFilters);
     }
   }
 
   clickHeight(id: string) {
     if (this.selectedHeightFilters.includes(id)) {
       this.selectedHeightFilters = this.selectedHeightFilters.filter((height) => height !== id);
+      this.selectedHeightFiltersEvent.emit(this.selectedHeightFilters);
     } else {
       this.selectedHeightFilters.push(id);
+      this.selectedHeightFiltersEvent.emit(this.selectedHeightFilters);
     }
   }
 
   clickWeight(id: string) {
     if (this.selectedWeightFilters.includes(id)) {
       this.selectedWeightFilters = this.selectedWeightFilters.filter((weight) => weight !== id);
+      this.selectedWeightFiltersEvent.emit(this.selectedWeightFilters);
     } else {
       this.selectedWeightFilters.push(id);
+      this.selectedWeightFiltersEvent.emit(this.selectedWeightFilters);
     }
   }
 

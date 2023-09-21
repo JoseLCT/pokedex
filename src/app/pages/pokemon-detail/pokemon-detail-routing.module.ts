@@ -9,6 +9,11 @@ const routes: Routes = [
     component: PokemonDetailPage,
     children: [
       {
+        path: '',
+        redirectTo: 'about',
+        pathMatch: 'full'
+      },
+      {
         path: 'about',
         loadChildren: () => import('../../pages/about/about.module').then(m => m.AboutPageModule)
       },

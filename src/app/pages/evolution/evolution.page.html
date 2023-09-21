@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>evolution</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">evolution</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<div class="container">
+  <h2 class="title_detail {{type}}">Evolution Chart</h2>
+  <div class="ev_container">
+    <ion-row class="evolution" *ngFor="let evolution of evolutions; let i = index">
+      <ion-col *ngIf="i === 0" size="12" class="evolution_img">
+        <ion-img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ pokemon.id }}.png" alt="{{ pokemon.name }}" />
+      </ion-col>
+      <ion-col *ngIf="i !== 0 && i % 2 !== 0" size="12" class="divisor">
+        <ion-icon style="color: black;" name="arrow-forward-outline"></ion-icon>
+      </ion-col>
+      <ion-col *ngIf="i !== 0 && i % 2 !== 0" size="12" class="evolution_img">
+        <ion-img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ evolution.evolutions[0].specieId ? evolution.evolutions[0].specieId : evolution.evolutions[0].itemId }}.png" alt="{{ evolution.name }}" />
+      </ion-col>
+      <ion-col *ngIf="i !== 0 && i % 2 === 0" size="12" class="evolution_img">
+        <ion-img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ evolution.evolutions[0].specieId ? evolution.evolutions[0].specieId : evolution.evolutions[0].itemId }}.png" alt="{{ evolution.name }}" />
+      </ion-col>
+    </ion-row>
+  </div>
+</div>

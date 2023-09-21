@@ -1,18 +1,49 @@
-<div class="container">
-  <p class="description">Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up
-    the sun's rays, the
-    seed grows progressively larger.</p>
-  <h2 class="title_detail grass">Pokédex Data</h2>
+<div class="container" *ngIf="pokemon">
+  <p class="description" [innerText]="description"></p>
+  <h2 class="title_detail {{type}}">Pokédex Data</h2>
   <div class="data_container">
     <h3 class="subtitle_detail">Species</h3>
-    <p class="data">Seed Pokémon</p>
+    <p class="data" [innerText]="species"></p>
     <h3 class="subtitle_detail">Height</h3>
-    <p class="data">0.7m (2′04″)</p>
+    <p class="data" [innerText]="height"></p>
     <h3 class="subtitle_detail">Weight</h3>
-    <p class="data">6.9 kg (15.2 lbs)</p>
+    <p class="data" [innerText]="weight"></p>
     <h3 class="subtitle_detail">Weaknesses</h3>
     <div class="weknesses_container">
-      
+      <div class="weak" *ngFor="let weakness of weaknessList">
+        <div class="type {{weakness}} weak">
+          <img src="assets/types/{{ weakness }}.svg" alt="weakness">
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2 class="title_detail {{type}}">Training</h2>
+  <div class="data_container">
+    <h3 class="subtitle_detail">EV Yield</h3>
+    <p class="data" [innerText]="evYield"></p>
+    <h3 class="subtitle_detail">Catch Rate</h3>
+    <p class="data" [innerText]="catchRate"></p>
+    <h3 class="subtitle_detail">Base Friendship</h3>
+    <p class="data">70 (normal)</p>
+    <h3 class="subtitle_detail">Base Exp</h3>
+    <p class="data" [innerText]="baseExp"></p>
+    <h3 class="subtitle_detail">Growth Rate</h3>
+    <p class="data" [innerText]="growthRate"></p>
+  </div>
+  <h2 class="title_detail {{type}}">Breeding</h2>
+  <div class="data_container">
+    <h3 class="subtitle_detail">Gender</h3>
+    <p class="data" [innerText]="malePercentage + ' ♂, ' + femalePercentage + ' ♀'"></p>
+    <h3 class="subtitle_detail">Egg Groups</h3>
+    <p class="data" [innerText]="eggGroup"></p>
+    <h3 class="subtitle_detail">Egg Cycles</h3>
+    <p class="data" [innerText]="eggCycle"></p>
+  </div>
+  <h2 class="title_detail {{type}}">Location</h2>
+  <div class="location_container">
+    <div class="location" *ngFor="let location of dexNumbers">
+      <h3 class="subtitle_detail">{{ location.number }}</h3>
+      <p class="data" *ngFor="let name of location.names" [innerText]="name"></p>
     </div>
   </div>
 </div>

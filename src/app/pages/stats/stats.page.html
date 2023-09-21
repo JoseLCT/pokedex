@@ -1,13 +1,69 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>stats</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">stats</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<div class="container">
+  <div class="base_stats_container">
+    <h2 class="title_detail {{type}}">Base Stats</h2>
+    <div class="hp_container">
+      <h3 class="subtitle_detail">HP</h3>
+      <div class="stats_data">
+        <p class="data" [innerText]="stats[0]"></p>
+        <ion-range [disabled]="true" [value]="stats[0]" [min]="0" [max]="100" class="range {{type}}"></ion-range>
+        <p class="data" [innerText]="minStats[0]"></p>
+        <p class="data" [innerText]="maxStats[0]"></p>
+      </div>
+      <h3 class="subtitle_detail">Attack</h3>
+      <div class="stats_data">
+        <p class="data" [innerText]="stats[1]"></p>
+        <ion-range [disabled]="true" [value]="stats[1]" [min]="0" [max]="100"></ion-range>
+        <p class="data" [innerText]="minStats[1]"></p>
+        <p class="data" [innerText]="maxStats[1]"></p>
+      </div>
+      <h3 class="subtitle_detail">Defense</h3>
+      <div class="stats_data">
+        <p class="data" [innerText]="stats[2]"></p>
+        <ion-range [disabled]="true" [value]="stats[2]" [min]="0" [max]="100"></ion-range>
+        <p class="data" [innerText]="minStats[2]"></p>
+        <p class="data" [innerText]="maxStats[2]"></p>
+      </div>
+      <h3 class="subtitle_detail">Sp. Atk</h3>
+      <div class="stats_data">
+        <p class="data" [innerText]="stats[3]"></p>
+        <ion-range [disabled]="true" [value]="stats[3]" [min]="0" [max]="100"></ion-range>
+        <p class="data" [innerText]="minStats[3]"></p>
+        <p class="data" [innerText]="maxStats[3]"></p>
+      </div>
+      <h3 class="subtitle_detail">Sp. Def</h3>
+      <div class="stats_data">
+        <p class="data" [innerText]="stats[4]"></p>
+        <ion-range [disabled]="true" [value]="stats[4]" [min]="0" [max]="100"></ion-range>
+        <p class="data" [innerText]="minStats[4]"></p>
+        <p class="data" [innerText]="maxStats[4]"></p>
+      </div>
+      <h3 class="subtitle_detail">Speed</h3>
+      <div class="stats_data">
+        <p class="data" [innerText]="stats[5]"></p>
+        <ion-range [disabled]="true" [value]="stats[5]" [min]="0" [max]="100"></ion-range>
+        <p class="data" [innerText]="minStats[5]"></p>
+        <p class="data" [innerText]="maxStats[5]"></p>
+      </div>
+      <h3 class="subtitle_detail">Total</h3>
+      <div class="footer_container">
+        <p class="data" [innerText]="total"></p>
+        <div class="right">
+          <p class="footer subtitle_detail">Min</p>
+          <p class="footer subtitle_detail">Max</p>
+        </div>
+      </div>
+    </div>
+    <p class="information">The ranges shown on the right are for a level 100 Pokémon. Maximum values are based on a
+      beneficial nature, 252 EVs, 31 IVs; minimum values are based on a hindering nature, 0 EVs, 0 IVs.</p>
+    <h2 class="title_detail {{type}}">Type Defenses</h2>
+    <p class="information defenses">The effectiveness of each type on {{pokemon.name}}.</p>
+    <div class="defenses_container">
+      <div *ngFor="let type of typeDefenses | keyvalue" class="type_defense {{type.key}}">
+        <div class="type {{type.key}} wrapper">
+          <img src="assets/types/{{type.key}}.svg" alt="{{type.key}}" class="type_icon" />
+        </div>
+        <p class="data" *ngIf="type.value !== 1" [innerText]="type.value"></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -44,7 +44,7 @@ ion-tab-button.tab-selected {
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
-    text-transform: capitalize;
+    text-transform: uppercase;
     z-index: -1;
     margin: 0;
 }
@@ -82,4 +82,5 @@ ion-tab-button.tab-selected {
     font-size: 32px;
     font-weight: 700;
     margin: 0;
+    text-transform: capitalize;
 }

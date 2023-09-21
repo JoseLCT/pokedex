@@ -61,40 +61,58 @@
     margin: 0;
 }
 
-.pokemon_card.bug {
+.pokemon_card.bug,
+.header_detail.bug {
     background-color: $bg-type-bug;
+    --background: $bg-type-bug;
 }
 
-.pokemon_card.dark {
+.pokemon_card.dark,
+.header_detail.dark {
     background-color: $bg-type-dark;
+    --background: $bg-type-dark;
 }
 
-.pokemon_card.dragon {
+.pokemon_card.dragon,
+.header_detail.dragon {
     background-color: $bg-type-dragon;
+    --background: $bg-type-dragon;
 }
 
-.pokemon_card.electric {
+.pokemon_card.electric,
+.header_detail.electric {
     background-color: $bg-type-electric;
+    --background: $bg-type-electric;
 }
 
-.pokemon_card.fairy {
+.pokemon_card.fairy,
+.header_detail.fairy {
     background-color: $bg-type-fairy;
+    --background: $bg-type-fairy;
 }
 
-.pokemon_card.fighting {
+.pokemon_card.fighting,
+.header_detail.fighting {
     background-color: $bg-type-fighting;
+    --background: $bg-type-fighting;
 }
 
-.pokemon_card.fire {
+.pokemon_card.fire,
+.header_detail.fire {
     background-color: $bg-type-fire;
+    --background: $bg-type-fire;
 }
 
-.pokemon_card.flying {
+.pokemon_card.flying,
+.header_detail.flying {
     background-color: $bg-type-flying;
+    --background: $bg-type-flying;
 }
 
-.pokemon_card.ghost {
+.pokemon_card.ghost,
+.header_detail.ghost {
     background-color: $bg-type-ghost;
+    --background: $bg-type-ghost;
 }
 
 .pokemon_card.grass,
@@ -103,36 +121,52 @@
     --background: $bg-type-grass;
 }
 
-.pokemon_card.ground {
+.pokemon_card.ground,
+.header_detail.ground {
     background-color: $bg-type-ground;
+    --background: $bg-type-ground;
 }
 
-.pokemon_card.ice {
+.pokemon_card.ice,
+.header_detail.ice {
     background-color: $bg-type-ice;
+    --background: $bg-type-ice;
 }
 
-.pokemon_card.normal {
+.pokemon_card.normal,
+.header_detail.normal {
     background-color: $bg-type-normal;
+    --background: $bg-type-normal;
 }
 
-.pokemon_card.poison {
+.pokemon_card.poison,
+.header_detail.poison {
     background-color: $bg-type-poison;
+    --background: $bg-type-poison;
 }
 
-.pokemon_card.psychic {
+.pokemon_card.psychic,
+.header_detail.psychic {
     background-color: $bg-type-psychic;
+    --background: $bg-type-psychic;
 }
 
-.pokemon_card.rock {
+.pokemon_card.rock,
+.header_detail.rock {
     background-color: $bg-type-rock;
+    --background: $bg-type-rock;
 }
 
-.pokemon_card.steel {
+.pokemon_card.steel,
+.header_detail.steel {
     background-color: $bg-type-steel;
+    --background: $bg-type-steel;
 }
 
-.pokemon_card.water {
+.pokemon_card.water,
+.header_detail.water {
     background-color: $bg-type-water;
+    --background: $bg-type-water;
 }
 
 .type.bug {
@@ -214,6 +248,74 @@
     margin: 20px 0;
 }
 
+.title_detail.bug {
+    color: $color-type-bug;
+}
+
+.title_detail.dark {
+    color: $color-type-dark;
+}
+
+.title_detail.dragon {
+    color: $color-type-dragon;
+}
+
+.title_detail.electric {
+    color: $color-type-electric;
+}
+
+.title_detail.fairy {
+    color: $color-type-fairy;
+}
+
+.title_detail.fighting {
+    color: $color-type-fighting;
+}
+
+.title_detail.fire {
+    color: $color-type-fire;
+}
+
+.title_detail.flying {
+    color: $color-type-flying;
+}
+
+.title_detail.ghost {
+    color: $color-type-ghost;
+}
+
 .title_detail.grass {
     color: $color-type-grass;
+}
+
+.title_detail.ground {
+    color: $color-type-ground;
+}
+
+.title_detail.ice {
+    color: $color-type-ice;
+}
+
+.title_detail.normal {
+    color: $color-type-normal;
+}
+
+.title_detail.poison {
+    color: $color-type-poison;
+}
+
+.title_detail.psychic {
+    color: $color-type-psychic;
+}
+
+.title_detail.rock {
+    color: $color-type-rock;
+}
+
+.title_detail.steel {
+    color: $color-type-steel;
+}
+
+.title_detail.water {
+    color: $color-type-water;
 }

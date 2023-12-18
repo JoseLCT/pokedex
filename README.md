@@ -1,3 +1,3 @@
 # Pokedex
 
-2023 - 2, Práctico de Móviles 2
+Práctico de Móviles 2, 2023-2
